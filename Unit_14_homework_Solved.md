@@ -21,8 +21,8 @@ Answer the following questions about the HTTP request and response process.
         - Header fields
             - Response body
 5. Which number class of status codes represents errors?
-    - 404 indicates client error, meaning the client sent a improperly formatted request
-    - 500 indicates server error, meaning the server application failed
+    - 400 codes indicates client error, meaning the client sent a improperly formatted request
+    - 500 codes indicates server error, meaning the server application failed
 
 6. What are the two most common request methods that a security professional will encounter?
     - HTTP Method: GET - requests ask for data from a server to retrieve data. 
@@ -42,14 +42,20 @@ Answer the following questions about the HTTP request and response process.
 Answer the following questions about `curl`:
 
 10. What are the advantages of using `curl` over the browser?
+    - 
 
 11. Which `curl` option is used to change the request method?
+    - change the method into something else by using curl -X or --request followed by the actual method name
 
 12. Which `curl` option is used to set request headers?
+    - curl -H or --header
 
 13. Which `curl` option is used to view the response header?
+    - curl -i or --include (include protocol headers in the output)
+    - curl -I or --head    (show document info only)
 
 14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
+    - 
 
 #### Sessions and Cookies
 
@@ -64,6 +70,7 @@ Answer the following questions about sessions and cookies:
     Content-type: text/html
     Set-Cookie: cart=Bob
     ```
+        - The set-cookie sends the cookie to the client, cart=Bob
 
 16. Which request header will continue the client's session?
 
@@ -72,6 +79,8 @@ Answer the following questions about sessions and cookies:
     Host: www.example.org
     Cookie: cart=Bob
     ```
+        - Cookie: cart=Bob 
+            - When Bob revisits the webpage, his browser sends the cookie back through the request header.
 
 #### Example HTTP Requests and Responses
 
@@ -93,12 +102,16 @@ username=Barbara&password=password
 ```
 
 17. What is the request method?
+    - POST /login.php HTTP/1.1
 
 18. Which header expresses the client's preference for an encrypted response?
+    - 
 
 19. Does the request have a user session associated with it?
-
+    -
+    
 20. What kind of data is being sent from this request body?
+    - username=Barbara&password=password
 
 **HTTP Response**
 
