@@ -42,7 +42,10 @@ Answer the following questions about the HTTP request and response process.
 Answer the following questions about `curl`:
 
 10. What are the advantages of using `curl` over the browser?
-    - 
+    - HTTP post
+    - SSL connections
+    - Proxy support
+    - FTP uploads
 
 11. Which `curl` option is used to change the request method?
     - change the method into something else by using curl -X or --request followed by the actual method name
@@ -55,7 +58,8 @@ Answer the following questions about `curl`:
     - curl -I or --head    (show document info only)
 
 14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
-    - 
+    - GET request
+        - the attacker could request data from a server to figure out which HTTP requests that an HTTP server will accept.
 
 #### Sessions and Cookies
 
@@ -105,10 +109,10 @@ username=Barbara&password=password
     - POST /login.php HTTP/1.1
 
 18. Which header expresses the client's preference for an encrypted response?
-    - 
+    - Upgrade-Insecure-Requests: 1
 
 19. Does the request have a user session associated with it?
-    -
+    - No the Session is not restablished yet
 
 20. What kind of data is being sent from this request body?
     - username=Barbara&password=password
@@ -147,7 +151,7 @@ X-XSS-Protection: 1; mode=block
     - Content-Type: text/html
 
 25. If your class covered security headers, what security request headers have been included?
-    -
+    
 
 
 #### Monoliths and Microservices
@@ -168,7 +172,7 @@ Answer the following questions about monoliths and microservices:
     - The API Gateway is responsible for request routing, composition, and protocol translation.
 
 28. What type of underlying technology allows for microservices to become scalable and have redundancy?
-    -
+    - Cointainers allow microservices to be scalable and redundant, along with Load Balancer
 
 
 #### Deploying and Testing a Container Set
@@ -189,7 +193,7 @@ Answer the following questions about multi-container deployment:
 #### Databases
 
 31. Which type of SQL query would we use to see all of the information within a table called `customers`?
-    - Select statement in SQL is used to fetch the records from the table. 
+    - The SELECT statement in SQL is used to fetch the records from the table. 
 
 32. Which type of SQL query would we use to enter new data into a table? (You don't need a full query, just the first part of the statement.)
     - The INSERT statement is used to insert single or multiple records into a table.
