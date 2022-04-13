@@ -70,7 +70,7 @@ Answer the following questions about sessions and cookies:
     Content-type: text/html
     Set-Cookie: cart=Bob
     ```
-        - The set-cookie sends the cookie to the client, cart=Bob
+    - The set-cookie sends the cookie to the client, cart=Bob
 
 16. Which request header will continue the client's session?
 
@@ -79,8 +79,8 @@ Answer the following questions about sessions and cookies:
     Host: www.example.org
     Cookie: cart=Bob
     ```
-        - Cookie: cart=Bob 
-            - When Bob revisits the webpage, his browser sends the cookie back through the request header.
+    - Cookie: cart=Bob 
+       - When Bob revisits the webpage, his browser sends the cookie back through the request header.
 
 #### Example HTTP Requests and Responses
 
@@ -109,9 +109,11 @@ username=Barbara&password=password
 
 19. Does the request have a user session associated with it?
     -
-    
+
 20. What kind of data is being sent from this request body?
     - username=Barbara&password=password
+
+
 
 **HTTP Response**
 
@@ -133,40 +135,69 @@ X-XSS-Protection: 1; mode=block
 ```
 
 21. What is the response status code?
+    - 200
 
 22. What web server is handling this HTTP response?
+    - Apache 
 
 23. Does this response have a user session associated to it?
+    - yes, Set-Cookie: SessionID=5
 
 24. What kind of content is likely to be in the [page content] response body?
+    - Content-Type: text/html
 
 25. If your class covered security headers, what security request headers have been included?
+    -
+
 
 #### Monoliths and Microservices
 
 Answer the following questions about monoliths and microservices:
 
 26. What are the individual components of microservices called?
+    - Clients
+    - Identity Providers
+    - API Gateway
+    - Messaging Formats
+    - Databases
+    - Static Content
+    - Management
+    - Service Discovery
 
 27. What is a service that writes to a database and communicates to other services?
+    - The API Gateway is responsible for request routing, composition, and protocol translation.
 
 28. What type of underlying technology allows for microservices to become scalable and have redundancy?
+    -
+
 
 #### Deploying and Testing a Container Set
 
 Answer the following questions about multi-container deployment:
 
 29. What tool can be used to deploy multiple containers at once?
+    - docker-compose up 
+        - to bring up multiple containers
+    - docker-compose down
+        - to bring down multiple containers    
+
 
 30. What kind of file format is required for us to deploy a container set?
+    - YAML file
+
 
 #### Databases
 
 31. Which type of SQL query would we use to see all of the information within a table called `customers`?
+    - Select statement in SQL is used to fetch the records from the table. 
 
 32. Which type of SQL query would we use to enter new data into a table? (You don't need a full query, just the first part of the statement.)
+    - The INSERT statement is used to insert single or multiple records into a table.
 
 33. Why would we never run `DELETE FROM <table-name>;` by itself?
+    - The DELETE statement is used to delete existing records in a table. Be careful when deleting records in a table! Notice the WHERE clause in the DELETE statement. The WHERE clause specifies which record(s) should be deleted. If you omit the WHERE clause, all records in the table will be deleted
+        - ex: DELETE FROM table_name WHERE condition
+
 
 ---
 
