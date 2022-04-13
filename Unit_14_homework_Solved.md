@@ -61,7 +61,7 @@ Answer the following questions about `curl`:
     - GET request
         - the attacker could request data from a server to figure out which HTTP requests that an HTTP server will accept.
 
-#### Sessions and Cookies
+#### Sessions and Cookies 
 
 Recall that HTTP servers need to be able to recognize clients from one another. They do this through sessions and cookies.
 
