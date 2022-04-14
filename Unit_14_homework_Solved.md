@@ -320,6 +320,9 @@ Create two new users: Amanda and Ryan.
     - Confirm Password: Check the box to confirm use of weak password.
     - Role: `Administrator`
 
+![image](https://user-images.githubusercontent.com/96030770/163305956-72a5973d-b7b7-4ed9-8f4d-16b5b00dbf51.png)
+
+
 5. Create another user named Ryan.
 
     - Username: `Ryan`
@@ -331,10 +334,16 @@ Create two new users: Amanda and Ryan.
     - Confirm Password: Check the box to confirm use of weak password.
     - Role: `Editor`
 
+![image](https://user-images.githubusercontent.com/96030770/163306121-eb807e8d-6973-4a53-9159-2ff1cd134be3.png)
+
+
 7. Log out and log in with the following credentials:
 
     - Username: `Amanda`
     - Password: `password`
+
+![image](https://user-images.githubusercontent.com/96030770/163306228-57cf37ec-416f-4cfa-8c7f-f011d6265e92.png)
+
 
 #### Step 2: Baselining
 
@@ -342,9 +351,16 @@ For these "baselining" steps, you'll want to log into two different types of acc
 
 1. Using your browser, log into your WordPress site as your sysadmin account and navigate to `localhost:8080/wp-admin/users.php`, where we previously created the user Ryan. Examine this page briefly. Log out.
 
+![image](https://user-images.githubusercontent.com/96030770/163306483-f7624570-186c-45ab-8224-fa227e5ddd88.png)
+
 2. Using your browser, log into your Ryan account and attempt to navigate to `localhost:8080/wp-admin/index.php`. Note the wording on your Dashboard.
 
+![image](https://user-images.githubusercontent.com/96030770/163306727-7280be65-1a61-4879-aa21-c1a494043aaa.png)
+
 3. Attempt to navigate to `localhost:8080/wp-admin/users.php`. Note what you see now.
+
+![image](https://user-images.githubusercontent.com/96030770/163307034-35c2c71f-d276-41dc-9e4a-f42374634b20.png)
+
 
 Log out in the browser.
 
@@ -353,14 +369,26 @@ Log out in the browser.
 Navigate to `~/Documents` in a terminal to save your cookies.
 
 1. Construct a `curl` request that enters two forms: `"log={username}"` and `"pwd={password}"` and goes to `http://localhost:8080/wp-login.php`. Enter Ryan's credentials where there are placeholders.
+ curl  --form "log=Ryan" --form "pwd=123456" http://localhost:8080/wp-login.php --verbose
 
     - **Question:** Did you see any obvious confirmation of a login? (Y/N)
+    - Yes
+  
+  ![image](https://user-images.githubusercontent.com/96030770/163307991-b8e35203-9732-4520-b6e4-971be1c98645.png)
 
+    
 2. Construct the same `curl` request, but this time add the option and path to save your cookie: `--cookie-jar ./ryancookies.txt`. This option tells `curl` to save the cookies to the `ryancookies.txt` text file.
 
 3. Read the contents of the `ryancookies.txt` file.
 
+curl --cookie-jar ./ryancookies.txt --form "log=Ryan" --form "pwd=123456" http://localhost:8080/wp-login.php --verbose
+curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/users.php - to save file
+
    - **Question:** How many items exist in this file?
+     -  There are 3
+
+![image](https://user-images.githubusercontent.com/96030770/163308863-45e7204f-2038-4e77-ba94-3d5c4fd573c0.png)
+
 
 Note that each one of these is a cookie that was granted to Ryan after logging in.
 
@@ -368,8 +396,10 @@ Note that each one of these is a cookie that was granted to Ryan after logging i
 
 1. Craft a new `curl` command that now uses the `--cookie` option, followed by the path to your cookies file. For the URL, use `http://localhost:8080/wp-admin/index.php`.
 
-   - **Question:** Is it obvious that we can access the Dashboard? (Y/N)
 
+   - **Question:** Is it obvious that we can access the Dashboard? (Y/N)
+       
+        
 2. Press the up arrow on your keyboard to run the same command, but this time, pipe `| grep Dashboard` to the end of your command to return all instances of the word `Dashboard` on the page.
 
     - **Question:**  Look through the output where `Dashboard` is highlighted. Does any of the wording on this page seem familiar? (Y/N) If so, you should be successfully logged in to your Editor's dashboard.
@@ -377,6 +407,8 @@ Note that each one of these is a cookie that was granted to Ryan after logging i
 #### Step 5: Test the Users.php Page
 
 1. Finally, write a `curl` command using the same `--cookie ryancookies.txt` option, but attempt to access `http://localhost:8080/wp-admin/users.php`.
+
+curl -L --cookie ryancookie.txt http://localhost:8080/wp-admin/index.php
 
     - **Question:** What happens this time?
 
