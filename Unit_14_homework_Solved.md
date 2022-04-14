@@ -372,9 +372,14 @@ Log out in the browser.
 Navigate to `~/Documents` in a terminal to save your cookies.
 
 1. Construct a `curl` request that enters two forms: `"log={username}"` and `"pwd={password}"` and goes to `http://localhost:8080/wp-login.php`. Enter Ryan's credentials where there are placeholders.
- curl  --form "log=Ryan" --form "pwd=123456" http://localhost:8080/wp-login.php --verbose
+ 
+ 
+    - curl  --form "log=Ryan" --form "pwd=123456" http://localhost:8080/wp-login.php --verbose
 
-    - **Question:** Did you see any obvious confirmation of a login? (Y/N)
+  
+  
+  
+  - **Question:** Did you see any obvious confirmation of a login? (Y/N)
     - Yes
   
   ![image](https://user-images.githubusercontent.com/96030770/163307991-b8e35203-9732-4520-b6e4-971be1c98645.png)
@@ -389,7 +394,9 @@ Navigate to `~/Documents` in a terminal to save your cookies.
 
       - curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/users.php - to save file
 
-   - **Question:** How many items exist in this file?
+ 
+ 
+ - **Question:** How many items exist in this file?
          -  There are 3
 
 ![image](https://user-images.githubusercontent.com/96030770/163308863-45e7204f-2038-4e77-ba94-3d5c4fd573c0.png)
