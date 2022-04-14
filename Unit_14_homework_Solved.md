@@ -9,17 +9,18 @@ Answer the following questions about the HTTP request and response process.
         -HTTP is an application layer: Layer 7 on the OSI model
 
 2. What are the different parts of an HTTP request? 
-    - Request line
+        - Request line
         - Header fields
-            - Request body
+        - Request body
 
 3. Which part of an HTTP request is optional?
     - Request Body
 
 4. What are the three parts of an HTTP response?
-    - Status line
+        - Status line
         - Header fields
-            - Response body
+        - Response body
+
 5. Which number class of status codes represents errors?
     - 400 codes indicates client error, meaning the client sent a improperly formatted request
     - 500 codes indicates server error, meaning the server application failed
@@ -58,7 +59,7 @@ Answer the following questions about `curl`:
     - curl -I or --head    (show document info only)
 
 14. Which request method might an attacker use to figure out which HTTP requests an HTTP server will accept?
-    - GET request
+        - GET request
         - the attacker could request data from a server to figure out which HTTP requests that an HTTP server will accept.
 
 #### Sessions and Cookies 
@@ -83,7 +84,7 @@ Answer the following questions about sessions and cookies:
     Host: www.example.org
     Cookie: cart=Bob
     ```
-    - Cookie: cart=Bob 
+       - Cookie: cart=Bob 
        - When Bob revisits the webpage, his browser sends the cookie back through the request header.
 
 #### Example HTTP Requests and Responses
@@ -180,9 +181,11 @@ Answer the following questions about monoliths and microservices:
 Answer the following questions about multi-container deployment:
 
 29. What tool can be used to deploy multiple containers at once?
-    - docker-compose up 
+      
+        - docker-compose up 
         - to bring up multiple containers
-    - docker-compose down
+        
+        - docker-compose down
         - to bring down multiple containers    
 
 
@@ -200,7 +203,7 @@ Answer the following questions about multi-container deployment:
 
 33. Why would we never run `DELETE FROM <table-name>;` by itself?
     - The DELETE statement is used to delete existing records in a table. Be careful when deleting records in a table! Notice the WHERE clause in the DELETE statement. The WHERE clause specifies which record(s) should be deleted. If you omit the WHERE clause, all records in the table will be deleted
-        - ex: DELETE FROM table_name WHERE condition
+            - ex: DELETE FROM table_name WHERE condition
 
 
 ---
@@ -381,11 +384,13 @@ Navigate to `~/Documents` in a terminal to save your cookies.
 
 3. Read the contents of the `ryancookies.txt` file.
 
-curl --cookie-jar ./ryancookies.txt --form "log=Ryan" --form "pwd=123456" http://localhost:8080/wp-login.php --verbose
-curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/users.php - to save file
+      - curl --cookie-jar ./ryancookies.txt --form "log=Ryan" --form "pwd=123456" http://localhost:8080/wp-login.php --verbose
+
+
+      - curl --cookie ./ryancookies.txt http://localhost:8080/wp-admin/users.php - to save file
 
    - **Question:** How many items exist in this file?
-     -  There are 3
+         -  There are 3
 
 ![image](https://user-images.githubusercontent.com/96030770/163308863-45e7204f-2038-4e77-ba94-3d5c4fd573c0.png)
 
